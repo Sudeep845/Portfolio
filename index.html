@@ -1,360 +1,566 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="title" content="">
-  <meta name="description" content="">
+  <meta name="title" content="Sudeep Shrestha - UI Designer & Developer">
+  <meta name="description" content="Portfolio of Sudeep Shrestha - UI Designer, Web Developer, .NET Developer and Graphic Designer">
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet"> 
-  <link rel="stylesheet" href="./assets/css/style.css">
- 
-
-  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/modern-style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <title>Sudeep Shrestha | UI Designer & Developer</title>
 </head>
 
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
 
-  
-
-  <header class="header" data-header>
+  <!-- Header -->
+  <header class="header">
     <div class="container">
- 
+      <nav class="navbar">
+        <a href="./index.html" class="logo">
+          <img src="./assets/images/home.gif" width="40" height="40" alt="Sudeep">
+          <span>Sudeep</span>
+        </a>
 
-      <nav class="navbar" data-navbar>
-
-        <div class="navbar-top">
-          <a href="./index.html" class="logo">
-            <img src="./assets/images/home.gif" width="64" height="24" alt="Sudeep">
-          </a>
-
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
-
-        <ul class="navbar-list">
-
-          <li>
-            <a href="./index.html" class="navbar-link">Home</a>
-          </li>
-
-          <li>
-            <a href="#project-section" class="navbar-link">Projects</a>
-          </li>
-
-
-          <li>
-            <a href="./assets/resume.pdf" target="_blank" class="navbar-link">Resume</a>
-          </li>
-
-
-          <li>
-            <a href="#designs-section" class="navbar-link">Designs</a>
-          </li>
-
-
-        </ul>
-
-        <div class="wrapper">
-          <a href="mailto:dbshrestha419@gmail.com" class="contact-link">Email</a>
-          <a href="tel:9841797132" class="contact-link">Phone </a> 
-        </div>
-
-        <ul class="social-list">
-
-          <li>
-            <a href="https://github.com/Sudeep845" class="social-link">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#designs" class="nav-link">Designs</a></li>
+          <li><a href="./assets/resume.pdf" class="nav-link resume-link" target="_blank">Resume <ion-icon name="document-text-outline"></ion-icon></a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="mobile-social">
+            <a href="https://github.com/Sudeep845" class="social-icon" target="_blank">
               <ion-icon name="logo-github"></ion-icon>
             </a>
-          </li>
-
-          <li>
-            <a href="https://www.linkedin.com/in/sudeepstha/" class="social-link">
+            <a href="https://www.linkedin.com/in/sudeepstha/" class="social-icon" target="_blank">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
-
-        
         </ul>
 
+        <div class="nav-actions">
+          <a href="https://github.com/Sudeep845" class="social-icon" target="_blank" aria-label="GitHub">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/sudeepstha/" class="social-icon" target="_blank" aria-label="LinkedIn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <ion-icon name="moon-outline"></ion-icon>
+          </button>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+        </div>
       </nav>
-
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
-
-      <div class="overlay" data-nav-toggler data-overlay></div>
-
     </div>
   </header>
 
-  
-
   <main>
-    <article>
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container hero-container">
+        <div class="hero-content animate-fade-in">
+          <h1 class="hero-title h1">Hi, I'm <span style="color: var(--primary);">Sudeep Shrestha</span></h1>
+          <h2 class="hero-subtitle">I'm a <span id="typed-text"></span></h2>
+          <p class="hero-description animate-fade-in animate-delay-1">
+            I specialize in UI design, web development, .NET desktop applications, and graphic design,
+            crafting stunning visuals and user-friendly experiences that make an impact.
+          </p>
+          <div class="hero-actions animate-fade-in animate-delay-2">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="./assets/resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-image animate-fade-in animate-delay-3">
+          <img src="./assets/images/me.jpg" alt="Sudeep Shrestha" loading="lazy">
+        </div>
+      </div>
+    </section>
 
-      <section class="section first" aria-label="home">
-        <div class="container">
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container">
+        <span class="section-subtitle animate-on-scroll">About Me</span>
+        <h2 class="section-title h2 animate-on-scroll">What I Do</h2>
 
-          <figure class="first-banner">
-            <img src="./assets/images/me.jpg" width="420" height="440" alt="meme">
+        <div class="about-container">
+          <div class="about-text animate-on-scroll">
+            <h3 class="about-text-title">Professional Profile</h3>
+            <p class="section-text">
+              I specialize in web design, .NET desktop apps, UI design, and graphic design. 
+              My focus is on creating user-friendly interfaces and visually appealing graphics
+              that engage users and deliver exceptional experiences.
+            </p>
+            <p class="section-text">
+              With a keen eye for detail and a passion for innovative solutions, I strive to deliver
+              high-quality work that meets client needs and exceeds expectations.
+            </p>
+          </div>
 
-          </figure>
+          <div class="skills-container animate-on-scroll">
+            <h3 class="skills-title">My Skills</h3>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Web Design</span>
+                <span class="skill-percentage">60%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 60%"></div>
+              </div>
+            </div>
 
-          <div class="first-content">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">UI Design</span>
+                <span class="skill-percentage">76%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 76%"></div>
+              </div>
+            </div>
 
-            <h1 class="h1 first-title" data-reveal="top" data-reveal-delay="0.5s">
-              Hi, I'm Sudeep
-            </h1>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">.NET Desktop Apps</span>
+                <span class="skill-percentage">62%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 62%"></div>
+              </div>
+            </div>
 
-            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
-              I specialize in UI design, crafting stunning visuals, and delivering high-impact graphic design.
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Graphic Design</span>
+                <span class="skill-percentage">65%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+      <div class="container">
+        <span class="section-subtitle animate-on-scroll">My Expertise</span>
+        <h2 class="section-title h2 animate-on-scroll">Services I Offer</h2>
+
+        <div class="grid-list grid-4">
+          <div class="service-card animate-on-scroll">
+            <div class="service-icon">
+              <img src="./assets/images/web-design.png" width="40" height="40" alt="Web Design">
+            </div>
+            <h3 class="service-title">Web Design</h3>
+            <p class="service-description">
+              Crafting engaging websites with intuitive navigation and stunning visuals.
+            </p>
+          </div>
+
+          <div class="service-card animate-on-scroll">
+            <div class="service-icon">
+              <img src="./assets/images/ui-design.png" width="40" height="40" alt="UI Design">
+            </div>
+            <h3 class="service-title">UI Design</h3>
+            <p class="service-description">
+              Creating seamless user experiences through intuitive interface designs.
+            </p>
+          </div>
+
+          <div class="service-card animate-on-scroll">
+            <div class="service-icon">
+              <img src="./assets/images/website.png" width="40" height="40" alt=".NET Development">
+            </div>
+            <h3 class="service-title">.NET Desktop Apps</h3>
+            <p class="service-description">
+              Developing powerful desktop applications using .NET framework.
+            </p>
+          </div>
+
+          <div class="service-card animate-on-scroll">
+            <div class="service-icon">
+              <img src="./assets/images/pen-tool.png" width="40" height="40" alt="Graphic Design">
+            </div>
+            <h3 class="service-title">Graphic Design</h3>
+            <p class="service-description">
+              Designing impactful visuals that communicate and enhance brand identity effectively.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+      <div class="container">
+        <span class="section-subtitle animate-on-scroll">My Work</span>
+        <h2 class="section-title h2 animate-on-scroll">Latest Projects</h2>
+
+        <div class="project-filters animate-on-scroll">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web Design</button>
+          <button class="filter-btn" data-filter="desktop">.NET Apps</button>
+          <button class="filter-btn" data-filter="ui">UI Design</button>
+        </div>
+
+        <div class="grid-list grid-2">
+          <div class="project-card project-item web animate-on-scroll">
+            <div class="project-image">
+              <img src="./assets/images/ai.jpg" alt="MINA Project">
+              <div class="project-overlay">
+                <a href="https://mina-healthcare.web.app/" class="project-action" target="_blank">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+                <a href="#" class="project-action">
+                  <ion-icon name="search-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Web Design</span>
+              <h3 class="project-title">MINA</h3>
+              <p class="project-description">
+                MINA (My Intelligent Nursing Assistance) is a modern and intelligent telemedicine platform
+                for online medical consultations and AI-assisted healthcare support.
+              </p>
+              <a href="https://mina-healthcare.web.app/" class="project-link" target="_blank">
+                View Project <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card project-item web animate-on-scroll">
+            <div class="project-image">
+              <img src="./assets/images/chat.jpg" alt="Chat To">
+              <div class="project-overlay">
+                <a href="https://lets-chat-to.web.app/" class="project-action" target="_blank">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+                <a href="#" class="project-action">
+                  <ion-icon name="search-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Web Design</span>
+              <h3 class="project-title">Chat To</h3>
+              <p class="project-description">
+                A full-stack chat application built with React, featuring intuitive UI/UX with dynamic backend
+                features for seamless, responsive user experiences.
+              </p>
+              <a href="https://lets-chat-to.web.app/" class="project-link" target="_blank">
+                View Project <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card project-item web animate-on-scroll">
+            <div class="project-image">
+              <img src="./assets/images/project-1.png" alt="BIGDEAL">
+              <div class="project-overlay">
+                <a href="https://Sudeep845.github.io/BigDeal/" class="project-action" target="_blank">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+                <a href="#" class="project-action">
+                  <ion-icon name="search-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Web Design</span>
+              <h3 class="project-title">BIGDEAL</h3>
+              <p class="project-description">
+                An online shopping platform prioritizing intuitive UI and UX design, with seamless navigation
+                and visually appealing, user-friendly layouts.
+              </p>
+              <a href="https://Sudeep845.github.io/BigDeal/" class="project-link" target="_blank">
+                View Project <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card project-item web animate-on-scroll">
+            <div class="project-image">
+              <img src="./assets/images/project-2.gif" alt="NOTFLIX">
+              <div class="project-overlay">
+                <a href="https://Sudeep845.github.io/Notflix/movie" class="project-action" target="_blank">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+                <a href="#" class="project-action">
+                  <ion-icon name="search-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Web Design</span>
+              <h3 class="project-title">NOTFLIX</h3>
+              <p class="project-description">
+                A video streaming platform inspired by Netflix, offering an immersive viewing experience
+                with user-friendly features and a vast content library.
+              </p>
+              <a href="https://Sudeep845.github.io/Notflix/movie" class="project-link" target="_blank">
+                View Project <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card project-item desktop animate-on-scroll">
+            <div class="project-image">
+              <img src="./assets/images/project-4.png" alt="BIGDEAL Desktop App">
+              <div class="project-overlay">
+                <a href="https://github.com/Sudeep845/Bigdeal-winform" class="project-action" target="_blank">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+                <a href="#" class="project-action">
+                  <ion-icon name="search-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">.NET Desktop Application</span>
+              <h3 class="project-title">BIGDEAL Desktop App</h3>
+              <p class="project-description">
+                A .NET desktop application that combines powerful functionality with intuitive design,
+                offering users a seamless online shopping experience directly from their desktops.
+              </p>
+              <a href="https://github.com/Sudeep845/Bigdeal-winform" class="project-link" target="_blank">
+                View Project <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card project-item ui animate-on-scroll">
+            <div class="project-image">
+              <img src="./assets/images/project-3.png" alt="Visit Nepal 2020">
+              <div class="project-overlay">
+                <a href="#" class="project-action">
+                  <ion-icon name="link-outline"></ion-icon>
+                </a>
+                <a href="#" class="project-action">
+                  <ion-icon name="search-outline"></ion-icon>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <span class="project-category">Web Design</span>
+              <h3 class="project-title">Visit Nepal 2020</h3>
+              <p class="project-description">
+                A web-based application guiding tourists to Nepal's must-visit places, offering insights
+                and recommendations for an unforgettable travel experience.
+              </p>
+              <a href="#" class="project-link">
+                View Project <ion-icon name="arrow-forward-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Designs Gallery Section -->
+    <section id="designs" class="designs section">
+      <div class="container">
+        <span class="section-subtitle animate-on-scroll">My Visuals</span>
+        <h2 class="section-title h2 animate-on-scroll">Design & Editing Highlights</h2>
+        <p class="section-text text-center animate-on-scroll">Check out some of my recent photo editing ventures.</p>
+
+        <div class="gallery-container">
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/Cover Poster.png" alt="KCC Poster" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/p2.png" alt="Study Square" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/task1.png" alt="Making flyer for Plexbit" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/p1.png" alt="Design Project" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/Mock Test.png" alt="Mock Test Design" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/t1.png" alt="Graphic Design Project" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/8.png" alt="Graphic Design" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/9.png" alt="Graphic Design" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+          <div class="gallery-item animate-on-scroll">
+            <img src="work/13.png" alt="Graphic Design" loading="lazy">
+            <div class="gallery-overlay">
+              <ion-icon name="search-outline" class="gallery-icon"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery Modal -->
+      <div id="gallery-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img id="modal-image" class="modal-content">
+        <div class="modal-nav">
+          <div class="modal-prev">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </div>
+          <div class="modal-next">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <span class="section-subtitle animate-on-scroll">Get in Touch</span>
+        <h2 class="section-title h2 animate-on-scroll">Contact Me</h2>
+
+        <div class="contact-card animate-on-scroll">
+          <div class="contact-info">
+            <h3 class="contact-title h3">Let's Work Together</h3>
+            <p>
+              Have a project in mind or want to discuss collaboration opportunities?
+              Feel free to reach out using the contact form or directly through email or phone.
             </p>
 
-            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
-              <a href="#designs-section" class="btn btn-primary">See My Works</a>
-
-              <a href="#contact-section" class="btn btn-secondary">Contact Me</a>
-            </div>
-
+            <ul class="contact-list">
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <div>
+                  <h4>Email</h4>
+                  <a href="mailto:dbshrestha419@gmail.com">dbshrestha419@gmail.com</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+                <div>
+                  <h4>Phone</h4>
+                  <a href="tel:9841797132">9841797132</a>
+                </div>
+              </li>
+              <li class="contact-item">
+                <div class="contact-icon">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+                <div>
+                  <h4>Location</h4>
+                  <address>Kathmandu, Nepal</address>
+                </div>
+              </li>
+            </ul>
           </div>
 
-        </div>
-      </section>
-
-      
-      <section class="section about" aria-label="about">
-        <div class="container">
-
-          <div class="wrapper">
-
-            <div data-reveal="left">
-              <h2 class="h2 section-title">What I Do?</h2>
-
-              <p class="section-text">
-                I specialize in web design, .NET desktop apps, UI design, and graphic design. 
-                I focus on creating user-friendly interfaces and visually appealing graphics.
-               
-              </p>
+          <form action="https://api.web3forms.com/submit" method="POST" id="contact-form"   class="contact-form">
+            <input type="hidden" name="access_key" value="ec45f6ce-6feb-4964-893d-119205dbd326">
+            
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
             </div>
             
-            <ul class="progress-list" data-reveal="right">
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Web Design</p>
-
-                  <span class="span">60 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 60%; background-color: #c7b1dd"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Ui</p>
-
-                  <span class="span">76 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 76%; background-color: #8caeec"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>.NET Desktop Apps</p>
-
-                  <span class="span">62 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 62%; background-color: #b0d4c1"></div>
-                </div>
-
-              </li>
-
-              <li class="progress-item">
-
-                <div class="label-wrapper">
-                  <p>Graphic Design</p>
-
-                  <span class="span">65 %</span>
-                </div>
-
-                <div class="progress">
-                  <div class="progress-fill" style="width: 65%; background-color: #e3a6b6"></div>
-                </div>
-
-              </li>
-
-            </ul>
-
-          </div>
-          <br>
-          <ul class="grid-list">
-
-            <li data-reveal="bottom">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/web-design.png" width="52" height="52" loading="lazy" alt="web design icon">
-                </div>
-
-                <h3 class="h4 card-title">Web Design</h3>
-
-                <p class="card-text">
-                  Crafting engaging websites with intuitive navigation and stunning visuals.
-                </p>
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.25s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/ui-design.png" width="52" height="52" loading="lazy" alt="mobile design icon">
-                </div>
-
-                <h3 class="h4 card-title">UI</h3>
-
-                <p class="card-text">
-                  Creating seamless user experiences through intuitive interface designs.
-                </p>
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.5s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/website.png" width="52" height="52" loading="lazy"
-                    alt="web development icon">
-                </div>
-
-                <h3 class="h4 card-title">.NET Desktop Apps</h3>
-
-                <p class="card-text">
-                  Developing powerful desktop applications using .NET framework.
-                </p>
-
-              </div>
-            </li>
-
-            <li data-reveal="bottom" data-reveal-delay="0.75s">
-              <div class="about-card">
-
-                <div class="card-icon">
-                  <img src="./assets/images/pen-tool.png" width="52" height="52" loading="lazy" alt="web seo icon">
-                </div>
-
-                <h3 class="h4 card-title">Graphic Design</h3>
-
-                <p class="card-text">
-                  Designing impactful visuals that communicate and enhance brand identity effectively.
-                </p>
-
-              </div>
-            </li>
-
-          </ul>
-
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" id="email" name="email_address" class="form-control" placeholder="Your Email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="Subject">
+            </div>
+            
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+            
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-<section id="designs-section">
-  <div class="rockyou">
-    <h2 class="h2 section-title" id="project-label">Design & Editing Highlights</h2>
-    <p class="section-text">
-      Check out some of my recent photo editing ventures.
-    </p>
-  </div>
-  
-</section>
-<br>
-
-<section>
-  
-  <div class="rockyou">
-    
-    <div class="pholder">
-
-      <div class="pholder-item" tabindex="0">
-        <img src="work/Cover Poster.png" class="pholder-image" alt="KCC Poster" loading="lazy">
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="social-links">
+          <a href="https://github.com/Sudeep845" class="social-link" target="_blank" aria-label="GitHub">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/sudeepstha/" class="social-link" target="_blank" aria-label="LinkedIn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+          © 2025 Sudeep Shrestha. All rights reserved.
+        </div>
+        
+        <div class="back-to-top-container">
+          <a href="#" class="back-to-top" aria-label="Back to top">
+            <ion-icon name="arrow-up-outline"></ion-icon>
+          </a>
+        </div>
       </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/p2.png" class="pholder-image" alt="Study Square" loading="lazy">
-      </div>
-
-      <div class="pholder-item" tabindex="0">
-        <img src="work/task1.png" class="pholder-image" alt="Making flyer for Plexbit" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/p1.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/Mock Test.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/t1.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-
-      <div class="pholder-item" tabindex="0">
-        <img src="work/8.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/9.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/13.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-
-      <div class="pholder-item" tabindex="0">
-        <img src="work/t2.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/3.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/2.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/4.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/10.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/11.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/1.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/6.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      <div class="pholder-item" tabindex="0">
-        <img src="work/7.png" class="pholder-image" alt="" loading="lazy">
-      </div>
-      
     </div>
-  </div>
-  
+  </footer>
+
+  <!-- Back to Top Button -->
+ 
+
+  <!-- Modal for designs gallery (compatibility with existing code) -->
   <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="img01">
@@ -362,302 +568,13 @@
     <a class="prev">&#10094;</a>
     <a class="next">&#10095;</a>
   </div>
-  
 
-</section>
-
-
-<section id="project-section" class="section project" aria-labelledby="project-label">
-        <div class="container">
-
-          <div class="title-wrapper" data-reveal="top">
-
-            <div>
-              <h2 class="h2 section-title" id="project-label">Latest Projects</h2>
-
-              <p class="section-text">
-                Check out some of my latest projects with creative ideas.
-              </p>
-            </div>
-
-            <!-- <a href="" class="btn btn-secondary">See All Projects</a> -->
-
-          </div>
-          <ul class="grid-list">
-
-
-            
-            <li>
-              <div class="project-card project-card-1" style="background-color: #f8f5fb">
-            
-                <div class="card-content" data-reveal="left">
-                  <p class="card-tag" style="color: #a07cc5">Web Design</p>
-                  <h3 class="h3 card-title">MINA</h3>
-            
-                  <p class="card-text">
-                    MINA (My Intelligent Nursing Assistance) is a modern and intelligent telemedicine platform developed as a university project, 
-                    hackthon project to offer a seamless experience for online medical consultations, appointment bookings, 
-                    and AI-assisted healthcare support.
-                  </p>
-            
-                  <a href="https://mina-healthcare.web.app/" class="btn-text" style="color: #a07cc5">
-                    <span class="span">See Project</span>
-            
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-            
-                </div>
-                <figure class="card-banner" data-reveal="left">
-                  <img src="./assets/images/ai.jpg" width="345" height="250" loading="lazy" alt="Web Design"
-                    class="w-100">
-                </figure>
-              </div>
-            </li>
-
-            <li>
-           <div class="project-card project-card-2" style="background-color: #f8f5fb">
-         
-             <div class="card-content" data-reveal="right">
-               <p class="card-tag" style="color: #a07cc5">Web Design</p>
-               <h3 class="h3 card-title">Chat To</h3>
-         
-               <p class="card-text">
-                 Developed the full-stack Chat To app using React, integrating intuitive UI/UX with dynamic backend features for seamless, responsive user experiences.
-               </p>
-         
-               <a href="https://lets-chat-to.web.app/" class="btn-text" style="color: #a07cc5">
-                 <span class="span">See Project</span>
-         
-                 <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-               </a>
-         
-             </div>
-             <figure class="card-banner" data-reveal="left">
-               <img src="./assets/images/chat.jpg" width="340" height="200" loading="lazy" alt="Web Design"
-                 class="w-100">
-             </figure>
-           </div>
-         </li>
-            
-          </ul>
-          <br>
-          <ul class="grid-list">
-
-            <li>
-              <div class="project-card project-card-1" style="background-color: #f8f5fb">
-
-                <div class="card-content" data-reveal="left">
-
-                  <p class="card-tag" style="color: #a07cc5">Web Design</p>
-
-                  <h3 class="h3 card-title">BIGDEAL</h3>
-
-                  <p class="card-text">
-                    BigDeal, an online shopping platform, prioritizes intuitive UI and UX design, 
-                    focusing on seamless navigation and visually appealing, user-friendly layouts.
-                  </p>
-
-                  <a href="https://Sudeep845.github.io/BigDeal/" class="btn-text" style="color: #a07cc5">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="right">
-                  <img src="./assets/images/project-1.png" width="500" height="290" loading="lazy" alt="Web Design"
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="project-card project-card-2" style="background-color: #f1f5fd">
-
-                <div class="card-content" data-reveal="right">
-
-                  <p class=" card-tag" style="color: #3f78e0">Web Design</p>
-
-                  <h3 class="h3 card-title">NOTFLIX</h3>
-
-                  <p class="card-text">
-                  StreamVision, a video streaming platform inspired by the popular service Netflix, 
-                  offers an immersive viewing experience with user-friendly features and a vast content 
-                  library.
-                  </p>
-
-                  <a href="https://Sudeep845.github.io/Notflix/movie" class="btn-text" style="color: #3f78e0">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="left">
-                  <img src="./assets/images/project-2.gif" width="600" height="367" loading="lazy" alt="Web Design"
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-
-          
-
-            <li>
-              <div class="project-card project-card-3" style="background-color: #f5faf7">
-
-                <div class="card-content" data-reveal="left">
-
-                  <p class=" card-tag" style="color: #7cb798">.NET Desktop Application</p>
-
-                  <h3 class="h3 card-title">BIGDEAL Desktop App</h3>
-
-                  <p class="card-text">
-                    BigDeal's .NET desktop application combines powerful functionality with intuitive design,
-                     offering users a seamless online shopping experience directly from their desktops.
-                  </p>
-
-                  <a href="https://github.com/Sudeep845/Bigdeal-winform" class="btn-text" style="color: #7cb798">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="right">
-                  <img src="./assets/images/project-4.png" width="600" height="367" loading="lazy" alt="Web Design"
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="project-card project-card-4" style="background-color: #fcf4f6">
-
-                <div class="card-content" data-reveal="left">
-
-                  <p class=" card-tag" style="color: #d16b86">Web Design</p>
-
-                  <h3 class="h3 card-title">Visit Nepal 2020</h3>
-
-                  <p class="card-text">
-                    Visit Nepal 2020 a web-based application guiding tourists to Nepal's must-visit places, 
-                    offering insights and recommendations for an unforgettable travel experience.
-                  </p>
-
-                  <a href="#" class="btn-text" style="color: #d16b86">
-                    <span class="span">See Project</span>
-
-                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
-                  </a>
-
-                </div>
-
-                <figure class="card-banner" data-reveal="right">
-                  <img src="./assets/images/project-3.png" width="620" height="370" loading="lazy" alt="Mobile Design"
-                    class="w-100">
-                </figure>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </div>
-      </section>
-
-
-
-      <section id="contact-section" section class="section contact" aria-label="contact">
-        <div class="container">
-
-          <div class="contact-card">
-
-            <div class="contact-content" data-reveal="left">
-
-              <div class="card-icon">
-                <img src="./assets/images/icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon">
-              </div>
-
-              <h2 class="h2 section-title">Have any questions or collaboration ideas?</h2>
-
-              <p class="section-text">
-                I’m ready to discuss and dive into new projects.
-                 Use the contact form to reach out, and I’ll get back to you quickly.
-              </p>
-
-            </div>
-
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" data-reveal="right">
-
-              <div class="input-wrapper">
-
-                <input type="hidden" name="access_key" value="ec45f6ce-6feb-4964-893d-119205dbd326">
-
-
-                <input type="text" name="name" placeholder="Name *" required class="input-field">
-
-                <input type="email" name="email_address" placeholder="Email *" required class="input-field">
-              </div>
-
-              <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
-
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-              <button type="submit" class="btn btn-secondary">Send message</button>
-
-            </form>
-
-          </div>
-
-        </div>
-      </section>
-
-    </article>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-
-   
-
-      <ul class="social-list1">
-
-        <li>
-          <a href="https://github.com/Sudeep845" class="social-link">
-            <ion-icon name="logo-github"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.linkedin.com/in/sudeepstha/" class="social-link">
-            <ion-icon name="logo-linkedin"></ion-icon>
-          </a>
-        </li>
-
-        <li>
-          
-            © 2025 Sudeep Shrestha. All rights reserved.
-          
-        </li>
-
-      </ul>
-
-    </div>
-  </footer>
-
- 
-  <script src="./assets/js/script.js"></script>
-
+  <!-- Scripts -->
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./assets/js/modern-script.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>
