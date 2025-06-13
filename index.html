@@ -505,6 +505,10 @@
 
           <form action="https://api.web3forms.com/submit" method="POST" id="contact-form"   class="contact-form">
             <input type="hidden" name="access_key" value="ec45f6ce-6feb-4964-893d-119205dbd326">
+            <input type="hidden" name="subject" value="New message from portfolio website">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
             
             <div class="form-group">
               <label for="name" class="form-label">Name</label>
@@ -513,7 +517,7 @@
             
             <div class="form-group">
               <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" name="email_address" class="form-control" placeholder="Your Email" required>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Your Email" required>
             </div>
             
             <div class="form-group">

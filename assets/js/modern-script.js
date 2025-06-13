@@ -307,13 +307,10 @@ document.addEventListener('DOMContentLoaded', () => {
       loop: true
     });
   }
-  
-  // Initialize form validation
+    // Initialize form validation
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
       // Basic validation
       let isValid = true;
       const inputs = contactForm.querySelectorAll('input, textarea');
@@ -322,6 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (input.hasAttribute('required') && !input.value.trim()) {
           isValid = false;
           input.classList.add('error');
+          e.preventDefault();
         } else {
           input.classList.remove('error');
         }
@@ -332,28 +330,33 @@ document.addEventListener('DOMContentLoaded', () => {
           if (!emailPattern.test(input.value.trim())) {
             isValid = false;
             input.classList.add('error');
+            e.preventDefault();
           }
         }
       });
       
       if (isValid) {
-        // Submit form
-        // You can add AJAX submission here
+        // Allow the form to submit naturally to the web3forms API
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.textContent = 'Sending...';
         }
         
-        // For demo purposes, we'll just show a success message
+        // Re-enable button after 3 seconds (in case of network issues)
         setTimeout(() => {
-          contactForm.innerHTML = '<div class="success-message"><ion-icon name="checkmark-circle-outline"></ion-icon><h3>Message Sent!</h3><p>Thank you for your message. I\'ll get back to you shortly.</p></div>';
-        }, 1500);
-      }
-    });
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+          }
+        }, 3000);
+      } else {
+        e.preventDefault(); // Prevent form submission if validation fails
+      }    });
     
     // Remove error class on input
-    inputs.forEach(input => {
+    const allInputs = contactForm.querySelectorAll('input, textarea');
+    allInputs.forEach(input => {
       input.addEventListener('input', () => {
         input.classList.remove('error');
       });
