@@ -1256,6 +1256,52 @@ textarea.form-control {
   resize: vertical;
 }
 
+/* Form Status Messages */
+#form-status {
+  margin: 1rem 0;
+}
+
+.success-message {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-left: 4px solid var(--accent);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  color: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.success-message ion-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid #ef4444;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  color: var(--dark);
+}
+
+.sending-message {
+  background-color: rgba(99, 102, 241, 0.1);
+  border-left: 4px solid var(--primary);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  color: var(--dark);
+  text-align: center;
+}
+
+[data-theme="dark"] .success-message,
+[data-theme="dark"] .error-message,
+[data-theme="dark"] .sending-message {
+  color: var(--light);
+}
+
 /* Footer */
 .footer {
   background-color: var(--light-gray);
